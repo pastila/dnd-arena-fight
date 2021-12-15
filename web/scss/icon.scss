@@ -1,0 +1,253 @@
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+
+  &__burger {
+    background: url("../images/burger.svg") center no-repeat;
+    width: 35px;
+    height: 19px;
+    position: relative;
+    top: 7px;
+  }
+
+  &__search {
+    background: url("../images/search-wh.svg") center no-repeat;
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    top: 5px;
+
+    &:after {
+      content: url("../images/search-bl.svg");
+      display: none;
+    }
+
+    &:hover {
+      background: url("../images/search-bl.svg") center no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &__sign-in {
+    background: url("../images/sign-in.svg") center no-repeat;
+    width: 22px;
+    height: 20px;
+    background-size: 22px 20px;
+    margin-right: 15px;
+    margin-top: 2px;
+
+    &:after {
+      content: url("../images/sign-in-bl.svg");
+      display: none;
+    }
+
+    &:hover {
+      background: url("../images/sign-in-bl.svg") center no-repeat;
+    }
+  }
+
+  &__interface {
+    background: url('../images/learn-interface__icon.svg') center no-repeat;
+    width: 90px;
+    height: 72px;
+
+    &:after {
+      background: url('../images/learn-interface__icon_active.svg') center no-repeat;
+      display: none;
+      content: '';
+      width: 90px;
+      height: 72px;
+    }
+  }
+
+  &__modifiers {
+    background: url('../images/learn-modifiers__icon.svg') center no-repeat;
+    width: 100px;
+    height: 100px;
+
+    &:after {
+      background: url('../images/learn-modifiers__icon_active.svg') center no-repeat;
+      display: none;
+      content: '';
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  &__spline {
+    background: url('../images/learn-spline__icon.svg') center no-repeat;
+    width: 78px;
+    height: 78px;
+
+    &:after {
+      background: url('../images/TEST/learn-spline__icon_active.svg') center no-repeat;
+      display: none;
+      content: '';
+      width: 78px;
+      height: 78px;
+    }
+  }
+
+  &__modeling {
+    background: url('../images/learn-modeling__icon.svg') center no-repeat;
+    width: 84px;
+    height: 91px;
+
+    &:after {
+      background: url('../images/learn-modeling__icon_active.svg') center no-repeat;
+      display: none;
+      content: '';
+      width: 84px;
+      height: 91px;
+    }
+  }
+
+  &__material {
+    background: url('../images/learn-material__icon.svg') center no-repeat;
+    width: 80px;
+    height: 88px;
+
+    &:after {
+      background: url('../images/learn-material__icon_active.svg') center no-repeat;
+      display: none;
+      content: '';
+      width: 80px;
+      height: 88px;
+    }
+  }
+
+  &__reproduction {
+    background: url('../images/learn-reproduction__icon.svg') center no-repeat;
+    width: 94px;
+    height: 87px;
+
+    &:after {
+      background: url('../images/learn-reproduction__icon_active.svg') center no-repeat;
+      display: none;
+      content: '';
+      width: 94px;
+      height: 87px;
+    }
+  }
+
+  &__camera {
+    background: url('../images/learn-camera__icon.svg') center no-repeat;
+    width: 110px;
+    height: 85px;
+
+    &:after {
+      background: url('../images/learn-camera__icon_active.svg') center no-repeat;
+      display: none;
+      content: '';
+      width: 110px;
+      height: 85px;
+    }
+  }
+
+  &__lighting {
+    background: url('../images/learn-lighting__icon.svg') center no-repeat;
+    width: 80px;
+    height: 80px;
+
+    &:after {
+      background: url('../images/learn-lighting__icon_active.svg') center no-repeat;
+      display: none;
+      content: '';
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__optimization {
+    background: url('../images/learn-sceneOptimization__icon.svg') center no-repeat;
+    width: 95px;
+    height: 106px;
+
+    &:after {
+      background: url('../images/learn-optimization__icon_active.svg') center no-repeat;
+      display: none;
+      content: '';
+      width: 95px;
+      height: 106px;
+    }
+  }
+
+  &__rendering {
+    background: url('../images/learn-rendering__icon.svg') center no-repeat;
+    width: 104px;
+    height: 68px;
+
+    &:after {
+      background: url('../images/larning-rendering__icon_active.svg') center no-repeat;
+      display: none;
+      content: '';
+      width: 104px;
+      height: 68px;
+    }
+  }
+
+  &__plagins {
+    background: url('../images/learn-plagins__icon.svg') center no-repeat;
+    width: 76px;
+    height: 74px;
+
+    &:after {
+      background: url('../images/learning-plagins__icon_active.svg') center no-repeat;
+      display: none;
+      content: '';
+      width: 76px;
+      height: 74px;
+    }
+  }
+
+  &__post {
+    background: url('../images/learn-postProcessing__icon.svg') center no-repeat;
+    width: 80px;
+    height: 80px;
+
+    &:after {
+      background: url('../images/learning-processing__icon_active.svg') center no-repeat;
+      display: none;
+      content: '';
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__scene {
+    background: url('../images/scene-small__icon.svg') center no-repeat;
+  }
+
+  &__video {
+    background: url('../images/video-small__icon.svg') center no-repeat;
+  }
+
+  &__analysis {
+    background: url('../images/analysis-small__icon.svg') center no-repeat;
+  }
+
+  &__lessons {
+    background: url('../images/lessons-small__icon.svg') center no-repeat;
+  }
+
+  &__plagin {
+    background: url('../images/plagin-small__icon.svg') center no-repeat;
+  }
+
+  &__model {
+    background: url('../images/model-small__icon.svg') center no-repeat;
+  }
+
+  &__gallery {
+    background: url('../images/gallery-small__icon.svg') center no-repeat;
+  }
+
+  &__textture {
+    background: url('../images/textture-small__icon.svg') center no-repeat;
+  }
+
+  &__news {
+    background: url('../images/news-small__icon.svg') center no-repeat;
+  }
+}

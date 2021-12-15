@@ -1,0 +1,88 @@
+/* 
+    Document   : linker
+    Created on : 28.03.2012, 13:52:01
+    Author     : Dancy
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.item-close {
+  background: url("/images/close.png") no-repeat scroll 0 0 transparent;
+  margin-top: 4px;
+  cursor: pointer;
+  margin-bottom: -2px;
+  margin-left: 0;
+  margin-right: 6px;
+  position: relative;
+}
+.jstree-1 li[rel="category"] > a > .jstree-icon, .jstree-1 li[rel="category-draggable"] > a > .jstree-icon { background: url("/images/drag-and-drop.gif") no-repeat center center!important;  }
+#linker-table {
+  color: #525252;
+  padding: 0 0 20px;
+  position: relative;
+  margin-bottom: 44px;
+  width: 100%;
+  table-layout: fixed;
+}
+#linker-table .border-r {
+  border-right:  1px solid rgb(194, 213, 225)!important;
+  border-right:  1px solid rgba(194, 213, 225, 0.9)!important;
+}
+#linker-table th {
+  border-bottom: medium none;
+  font-size: 1.8em;
+  text-align: left;
+}
+#linker-table td, #linker-table th {
+  padding: 14px 6px 14px 16px;
+}
+
+
+#linker-table-wrap {
+  clear: both;
+  margin-left: 0;
+  margin-top: 18px;
+  margin-left: 0;
+}
+
+#linker-content td { vertical-align: top; }
+.search-filter-block {
+    background: none repeat scroll 0 0 #E8E8E8;
+}
+#linker-search-left, #linker-search-right{
+  padding: 10px 6px 10px 16px;
+  border-bottom: 2px solid #1a89cb;
+  -webkit-box-shadow: 0 4px 3px -2px #a5cadf;
+  -moz-box-shadow: 0 4px 3px -2px #a5cadf;
+  box-shadow: 0 4px 3px -2px #a5cadf;  
+	background: #ffffff;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ffffff), to(#f1f9fd));
+	background: -moz-linear-gradient(#ffffff, #f1f9fd);
+  background: -o-linear-gradient(#ffffff, #f1f9fd);
+	background: linear-gradient(#ffffff, #f1f9fd);
+  position: relative;    
+  line-height: 28px;
+}
+.linker-search-block input[type="text"]{
+  /*width: 114px;*/
+  width: 40%;
+  height: 20px;
+  margin-right: 2px;
+  margin-left: 0;
+}
+
+.linker-search-block input[type="button"] {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  height: 22px;
+  line-height: 21px;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-right: 2px;
+} 
+
+.scroll-pane { height: 600px; overflow: auto; }
+
+#linker-content-right.jstree li a .jstree-icon{ display: block!important; margin-top: -1px!important; margin-left: 0!important; }
+#bindings-content-right.jstree li a.jstree-loading  .jstree-icon {float: left; width: 16px; height: 16px; display: block!important; background: url("/images/ajax-loader-snake.gif") no-repeat center center!important; margin: 0 6px 0 -24px!important; }

@@ -1,0 +1,11 @@
+{% extends '@SonataAdmin/CRUD/base_edit.html.twig' %}
+
+{% block javascripts %}
+    <script type="text/javascript">urlPrefix = '{{ app.request.getBaseURL() }}';</script>
+    {{ parent() }}
+    <script src="{{ asset('js/vendor/jstree/jquery.ui.jstree-choice.js') }}"></script>
+    <script src="{{ asset('js/vendor/jstree/jstree/jquery.jstree.js') }}"></script>
+    {{ tinymce_init({
+        tinymce_jquery: false,
+    }) }}
+{% endblock javascripts %}

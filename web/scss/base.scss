@@ -1,0 +1,263 @@
+@import "vars";
+@import "mixins";
+
+
+// Base layout
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+//@include breakpoint-desktop {
+//  html{
+//    font-size: 20px;
+//  }
+//}
+
+body {
+  //min-width: $min_width;
+  background-color: $bg_dark;
+  overflow-x: hidden;
+  min-width: 320px;
+
+  &.fixed {
+    position: fixed;
+    overflow: hidden;
+  }
+
+  .ui-widget {
+    font-family: DINPro;
+  }
+}
+
+section {
+  //height: 97%;
+  height: auto;
+  position: relative;
+  min-height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  background-color: #f2f9ff;
+  padding-top: 75px + $header_height;
+  padding-bottom: 115px;
+}
+
+.footer-wrap {
+  position: absolute !important;
+  bottom: 0;
+  left: 0 ;
+  right: 0;
+}
+
+.container {
+  //min-width: $max_width;
+  max-width: $max_width;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 $site_padd;
+
+  &.pr {
+    position: relative;
+    padding: 0 100px;
+    @include breakpoint-desktop {
+      padding: 0 8%;
+    }
+
+    @include breakpoint-laptop {
+      padding: 0;
+    }
+  }
+
+  &_wide {
+    max-width: $max_width_wide;
+  }
+}
+
+.header {
+  height: $header_height;
+}
+
+.content {
+  padding-bottom: $footer_height;
+}
+
+.footer {
+  //height: $footer_height;
+  height: 125px;
+  //margin-top: -$footer_height;
+  margin-top: -60px;
+  position: relative;
+
+  .footer-copyright {
+    font-size: 15px;
+    color: #839AAA;
+    display: block;
+    margin-top: 50px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0)
+}
+
+//  search-wrap
+
+.search-wrap {
+
+  .search-ui-container {
+    //border: 1px solid #D4E1EC;
+    box-sizing: border-box;
+    //box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 4px 4px;
+
+    //border-bottom: none;
+  }
+
+  .ui-autocomplete {
+    background: #FFFFFF;
+    top: 77px !important;
+    border: 1px solid #D4E1EC !important;
+    box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 4px 4px;
+
+    max-height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    li {
+      padding: 3px 15px 4px;
+      font-family: DINPro;
+      font-size: 17px;
+      color: $c_brand_dark;
+      letter-spacing: -0.103778px;
+      outline: none;
+      white-space: nowrap;
+
+      .ui-state-active {
+        margin: 0;
+        border: none;
+        outline: none;
+      }
+
+      a {
+        color: $c_brand_dark;
+        outline: none;
+        display: inline-block;
+        vertical-align: top;
+        white-space: normal;
+
+        .highlight {
+          font-weight: bold;
+        }
+
+        &.ui-state-active {
+          background-color: transparent !important;
+          border-color: transparent;
+          outline: none;
+        }
+      }
+
+      span {
+        border-color: transparent;
+        outline: none;
+        display: inline-block;
+        vertical-align: top;
+
+        &.icon {
+          zoom: .6;
+          position: relative;
+          top: 7px;
+        }
+      }
+
+      &:after {
+        display: none;
+      }
+
+      &:hover {
+        background-color: #F4FAFF;
+      }
+
+      &.show-all-result {
+        background-color: $c_brand_dark;
+        color: $c_white;
+
+        a {
+          padding-top: 9px;
+          padding-bottom: 9px;
+        }
+        //position: fixed;
+        //bottom: 0;
+        //left: 0;
+        //right: 0;
+
+        span {
+          color: $c_white !important;
+        }
+      }
+
+      &.empty {
+        //border-bottom: 1px solid #D4E1EC;
+        background-color: transparent !important;
+        cursor: default !important;
+
+        border-radius: 0 0 4px 4px;
+
+        a {
+          padding-left: 0;
+          color: $c_black;
+          cursor: default !important;
+        }
+      }
+    }
+  }
+}
+
+.ui-widget-overlay {
+  filter: Alpha(Opacity=100) !important;
+}
+
+.hide-desktop {
+  display: none;
+
+  @include breakpoint-desktop {
+    display: initial;
+  }
+}
+
+.hide-laptop {
+  display: initial;
+
+  @include breakpoint-desktop {
+    display: none;
+  }
+}
+
+.hide-mobile {
+  display: initial;
+
+  @include breakpoint-laptop {
+    display: none;
+  }
+}
+
+.show-mobile {
+  display: none;
+
+  @include breakpoint-laptop {
+    display: initial;
+  }
+}

@@ -1,0 +1,64 @@
+version: '3.6'
+
+services:
+  http:
+    image: nginx:1.17-alpine
+    depends_on:
+      - php-fpm
+    networks:
+      - bridge
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      - "traefik.http.routers.dnd.rule=Host(`dnd.docker`)"
+    volumes:
+      - .:/var/www
+      - .docker/nginx/nginx.conf:/etc/nginx/nginx.conf:rw
+      - .docker/nginx/conf.d:/etc/nginx/conf.d:rw
+
+  php-fpm:
+    build:
+      context: .docker/php
+      args:
+        USER_ID: ${DOCKER_USER_UID}
+        USER_NAME: ${DOCKER_USER_NAME}
+        GROUP_ID: ${DOCKER_GROUP_ID}
+    user: ${DOCKER_USER_NAME}
+    environment:
+      PHP_IDE_CONFIG: serverName=dnd.docker
+      XDEBUG_ENABLE: ${XDEBUG_ENABLE}
+      PHP_EXTENSION_XDEBUG: ${XDEBUG_ENABLE}
+      XDEBUG_CONFIG: "remote_host=${XDEBUG_REMOTE_HOST} remote_port=${XDEBUG_PORT} idekey=${XDEBUG_IDE_KEY} remote_enable=${XDEBUG_ENABLE}"
+    extra_hosts:
+      - host.docker.internal:${DOCKER_HOST_IP}
+    depends_on:
+      - mysql
+    networks:
+      - bridge
+    volumes:
+      - .:/var/www
+      - ./.docker/php/php.ini:/usr/local/etc/php/php.ini
+      - ./.docker/php/conf.d/20-xdebug.ini:/usr/local/etc/php/conf.d/20-xdebug.ini
+
+  mysql:
+    build:
+      context: .docker/mysql
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - TZ=${WORKSPACE_TIMEZONE}
+#    ports:
+#      - ${MYSQL_HOST_PORT}:3306
+    networks:
+      - bridge
+    volumes:
+      - ./mysql:/var/lib/mysql
+      - .docker/mysql/initdb:/docker-entrypoint-initdb.d
+
+networks:
+  bridge: ~
+  traefik:
+    external: true

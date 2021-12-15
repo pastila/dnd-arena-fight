@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    <meta charset="UTF-8"/>
+    <title>{% block title %}DND{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('/css/main.css') }}"/>
+    {% endblock %}
+    {#        <link rel="stylesheet" href="{{ asset('/css/main.css') }}"/>#}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/ico" href="{{ asset('favicon.ico') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('js/vendor/slick/slick.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('js/vendor/slick/slick-theme.css') }}"/>
+    <script>
+        {% set imagePlaceholder = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" %}
+    </script>
+    {% block tagmanager %}
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-NLJ4JP6');</script>
+        <!-- End Google Tag Manager -->
+    {% endblock tagmanager %}
+    {% endblock head %}
+</head>
+<body>
+{% block tagmanager_noscript %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLJ4JP6"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+{% endblock %}
+<div class="content" id="content">
+
+    {% block menu %}
+    {% endblock menu %}
+
+    {% if is_granted('ROLE_ADMIN') %}
+        {% include '::admin_panel.html.twig' %}
+    {% endif %}
+    <div id="blurContent" >
+
+    {% block body %}
+        {% block header %}
+            <div class="header-wrapper">
+                {% block headerImage %}
+                    <img class="section-header__img" src="{{ asset('images/learn-header__image.png') }}" alt="">
+                    <div class="header-center__wrapper">
+                        <span class="header-wrapper__text">ИЗУЧАЙ</span>
+                    </div>
+                {% endblock headerImage %}
+            </div>
+
+        {% endblock header %}
+        {% block content %}
+        {% endblock content %}
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <filter id="blur">
+                <feGaussianBlur stdDeviation="10" />
+            </filter>
+        </svg>
+    {% endblock body %}
+    </div>
+
+    {% block footer %}
+    {% endblock %}
+    {% block javascripts %}
+        <script type="text/javascript">urlPrefix = '{{ app.request.getBaseURL() }}';</script>
+        <script src="{{ asset('js/vendor/jquery-3.2.1.min.js') }}"></script>
+        <script src="{{ asset('js/vendor/jquery-ui.min.js') }}"></script>
+{#        <script src="{{ asset('js/vendor/slick/slick.min.js') }}"></script>#}
+
+        <script type="text/javascript">window.require = {waitSeconds: 600};</script>
+        <script src="{{ asset('js/vendor/requirejs/require.js') }}" data-main="/js/app/frontend/app.js"></script>
+        <script>
+          if ('undefined' === typeof ObjectCache) {
+            ObjectCache = {};
+          }
+          ObjectCache.AuthenticateToken = '{{ csrf_token('authenticate') }}';
+        </script>
+    {% endblock %}
+</div>
+</body>
+</html>

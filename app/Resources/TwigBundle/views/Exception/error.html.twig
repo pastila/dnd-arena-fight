@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="header-wrapper">
+        <div class="header-center__wrapper error">
+            <span class="header-wrapper__text">{% block error_title %}Техническая ошибка{% endblock %}</span>
+            <a href="{{ path('homepage') }}">Вернуться на главную</a>
+        </div>
+    </div>
+{% endblock %}

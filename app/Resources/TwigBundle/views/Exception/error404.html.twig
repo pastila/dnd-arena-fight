@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="error-page error-page_403">
+        <div class="container">
+            <div class="error-page__image">
+                <img src="{{ asset('/images/404.png') }}" alt="">
+            </div>
+            <div class="error-page__message">
+                <p class="error-page__text">
+                    упс, страница не найдена,<br> но вы всегда можете вернуться на  <a href="{{ url('homepage') }}" class="error-page__link">главную</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

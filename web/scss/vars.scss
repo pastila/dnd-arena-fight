@@ -1,0 +1,59 @@
+﻿// Base layout
+//$min_width: 1280px;
+$min_width: 49rem;
+$max_width: 1720px;
+$max_width_wide: 1730px;
+$site_padd: 50px;
+$footer_height: 70px;
+$header_height: 124px;
+
+// Base colors
+$c_brand: #47B5AF;
+$c_brand_light: #f3f8fe;
+$c_brand_dark: #0070ba;
+
+$c_white: #ffffff;
+$c_orange: #ef4f30;
+$c_red: #dd0200;
+$c_grey: #E1E1E1;
+$c_grey_dark: #4a4a4a;
+$c_black: #191919;
+$c_text: $c_black;
+$c_overlay: #191919;
+
+// Overlay
+$overlay_opacity: .6;
+$popup_background: #1e1e1e;
+
+// Links
+$link-color:              $c_brand_dark;
+$link-color-hover:        #2fb4e9;
+
+// Typography
+$font-family-base: 'DINPro', sans-serif;
+
+
+$fs-base:   18px;
+$fs-large:  24px;
+$fs-small:  14px;
+$fs-mini:  12px;
+
+$fs-h1: 36px;
+$fs-h2: 52px;
+$fs-h3: 20px;
+
+// line-height
+$lh-base:        1.4;
+
+// Forms
+$input-color-placeholder: lighten($c_text, 25%);
+
+// Base backgrounds
+$bg_body: #fff;
+$bg_dark: #191919;
+
+//BreakPoints
+
+$desktop: 1919px;
+$laptop: 1023px;
+$mobile: 375px;

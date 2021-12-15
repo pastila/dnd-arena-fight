@@ -1,0 +1,49 @@
+// Typography
+body {
+    font-family: $font-family-base;
+    font-size: $fs-base;
+    line-height: $lh-base;
+    color: $c_text;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+a {
+  color: $c_grey ;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+      color: $c_brand;
+      text-decoration: none;
+    }
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    display:block;
+    font-weight: normal;
+
+    &:first-child { margin-top: 0; }
+}
+
+h1 {
+    font-size: $fs-h1;
+    line-height: $fs-h1 + 8;
+    font-weight: 500;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+h2, .h2 {
+    font-size: $fs-h2;
+    line-height: $fs-h2 + 6;
+    font-weight: normal;
+    margin-top: 40px;
+    margin-bottom: 35px;
+}

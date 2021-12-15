@@ -1,0 +1,39 @@
+{
+  "name": "abcg",
+  "version": "1.0.0",
+  "description": "abcg",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "grunt": "^1.1.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-requirejs": "^1.0.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-static-versioning": "^0.2.2",
+    "load-grunt-config": "^3.0.1",
+    "sass": "^1.23.7"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.0",
+    "flexboxgrid-sass": "^8.0.5",
+    "grunt-concat-sourcemap": "^0.4.3",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass": "^3.1.0",
+    "node-sass": "^4.14.1",
+    "normalize.css": "^7.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.accurateweb.ru/accurateweb/abcg.git"
+  },
+  "author": "Accurateweb",
+  "license": "ISC"
+}

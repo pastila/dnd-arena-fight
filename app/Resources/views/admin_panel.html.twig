@@ -1,0 +1,26 @@
+<div class="control-panel">
+    <a class="show-admin-controls" title="Показать панель администрирования"></a>
+
+    <div class="admin-controls">
+        <a class="hide-admin-controls" title="Скрыть панель администрирования"></a>
+        {% if is_granted('ROLE_ADMIN') %}
+            <a class="control-panel__link" href="{{ path('sonata_admin_dashboard') }}">
+                Перейти в раздел администрирования
+            </a>
+{#            {% if app.request.get('_route') %}#}
+{#                <a class="control-panel__link"#}
+{#                   href="{{ path(app.request.get('_route'),app.request.get('_route_params',{})|merge({'hotspots':not app.request.get('hotspots')})) }}">#}
+{#                    {% if app.request.get('hotspots') %}Скрыть{% else %}Показать{% endif %} клик-зоны#}
+{#                </a>#}
+{#            {% endif %}#}
+        {% endif %}
+    </div>
+</div>
+<script>
+  document.querySelector('.show-admin-controls').addEventListener('click', function (e) {
+    document.querySelector('.admin-controls').classList.add('deployed');
+  });
+  document.querySelector('.hide-admin-controls').addEventListener('click', function (e) {
+    document.querySelector('.admin-controls').classList.remove('deployed');
+  });
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=Edge" />
+    <title>{% block title %}ABCG{% endblock %}</title>
+    {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}" type="text/css" media="screen, projection" />
+    {% endblock stylesheets %}
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <div class="container">
+            <a class="header__logo gpn-logo gpn-logo_white" title="Газпромнефть" href="/" style="display: block; margin: 0 auto; margin-top: 40px; "></a>
+        </div>
+    </header>
+    <section class="content">
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+    </section>
+</div>
+<footer class="footer">
+    <div class="container">
+    </div>
+</footer>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

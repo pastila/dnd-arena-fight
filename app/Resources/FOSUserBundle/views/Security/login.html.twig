@@ -1,0 +1,76 @@
+{% extends "base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% block headerImage %}
+{% endblock  %}
+
+{% block menu %}
+    <div class="header-wrap">
+        <div class="header-menu">
+            <div class="header-menu__wrapper">
+                <a href="#" class="header-menu__burger icon icon__burger"></a>
+{#                <a href="#" class="header-menu__search icon icon__search"></a>#}
+{#                <input type="text" class="header-menu__input">#}
+            </div>
+        </div>
+    </div>
+{% endblock menu %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="card card-container">
+
+            <span class="form-title">ВОЙТИ</span>
+            <form action="{{ path("fos_user_security_check") }}" method="post" class="layer__content_form">
+                {% if error %}
+                    <ul class="error-list global">
+                        <li>{{ error.messageKey|trans(error.messageData, 'security') }}</li>
+                    </ul>
+                {% endif %}
+                <div class="form__wrapper">
+                    <input required type="text" name="_username" value="{{ last_username }}" placeholder="email" class="layer__content_input" data-validate="email" data-describedby="email-error-list" data-description="email">
+                    <div class="error-list" id="email-error-list"></div>
+                </div>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+                <div class="form__wrapper">
+                    <input required type="password" name="_password" placeholder="пароль" class="layer__content_input" data-validate="password" data-describedby="password-error-list" data-description="password">
+                    <div class="error-list" id="password-error-list"></div>
+                </div>
+                <button type="submit" class="layer__content_button">войти</button>
+            </form>
+            {#<div class="layer__content_links">
+                <a href="#" class="forget">Забыл пароль?</a>
+                <a href="#"  class="registration">Не зарегистрированы?</a>
+                <a href="#" class="create">Создать аккаунт</a>
+            </div>#}
+
+
+{#            <form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin">#}
+{#                <span class="form-title">ВОЙТИ</span>#}
+{#                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>#}
+{#                <div class="form-group">#}
+{#                    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="{{ 'security.login.username'|trans }}"  class="layer__content_input" autofocus />#}
+{#                    <input type="password" id="password" name="_password" required="required" placeholder="{{ 'security.login.password'|trans }}"  class="layer__content_input"/>#}
+{#                </div>#}
+{#                #}{#<div id="remember" class="checkbox">#}
+{#                    <label>#}
+{#                        <input type="checkbox" id="remember_me" name="_remember_me" value="on" /> {{ 'security.login.remember_me'|trans }}#}
+{#                    </label>#}
+{#                </div>#}
+{#                <div class="form-group submit">#}
+{#                    <button class="layer__content_button" type="submit" id="_submit" name="_submit">#}
+{#                        {{ 'security.login.submit'|trans }}#}
+{#                    </button>#}
+{#                </div>#}
+{#                #}{#<a href="{{ path('fos_user_registration_register') }}" class="btn btn-primary btn-block btn-newuser">Новый пользователь</a>#}
+{#            </form>#}
+            {#<a href="{{ path('fos_user_resetting_request') }}" class="forgot-password">#}
+            {#Забыл пароль#}
+            {#</a>#}
+        </div>
+    </div>
+
+{% endblock content %}
